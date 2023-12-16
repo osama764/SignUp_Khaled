@@ -26,9 +26,7 @@ regester.addEventListener("click", (e) => {
   let passwordwifi = signUp.passwordwifi.value;
   let confirmpasswordwifi = signUp.confirmpasswordwifi.value;
 
-  // تم إنشاء المستخدم بنجاح
-
-  if (password === confirmPassword && passwordwifi === confirmpasswordwifi) {
+   if (password === confirmPassword && passwordwifi === confirmpasswordwifi) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -50,7 +48,7 @@ regester.addEventListener("click", (e) => {
         signUp.usernamewifi.value = "";
         signUp.passwordwifi.value = "";
         signUp.confirmpasswordwifi.value = "";
-        console.log("User created successfully");
+      alret("User created successfully");
 
       })
       .catch((error) => {
@@ -58,6 +56,6 @@ regester.addEventListener("click", (e) => {
         console.log(errorMessage);
       });
   } else {
-    console.log("Password does not match");
+    alert("Password does not match");
   }
 });
